@@ -8,7 +8,7 @@ function zainOutZoom(){
 function test(){
     const address = '127.0.0.1'   
     const port = 5000
-    const fetch = async() =>{
+    const getData = async() =>{
         const response = await fetch(
             `http://${address}:${port}/api/0`,
             {
@@ -21,7 +21,7 @@ function test(){
         return await response.json();
     }
 
-    fetch().then((json) => { console.log(json); })
+    getData().then((json) => { console.log(json); })
 
 }
 
