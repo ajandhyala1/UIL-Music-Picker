@@ -6,6 +6,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+
 <div class="header">
   <h1>UIL Music Picker</h1>
   <p>Use this website to help pick a UIL program for music students in Texas</p>
@@ -21,8 +23,102 @@
 
 <h1 class = "pageHeadings">Filters</h1>
 
-<body>
-   <button onclick="test()">Aditya</button>
+<body onload = "filterData()">
+  
+   <h3 class = "pageHeadings">Layout</h3>
+   <p style = "text-align:center;">Use the text-boxes and the grade counter to sort out attributes of pieces that you desire. <br>
+    If you would like recomendations for pieces, use the checkbox on the far left to recommend pieces like the one checked.
+   </p>
+<!--
+   <div class = "musicPieceElements">
+    <p>Code</p>
+    <p>Name</p>
+    <p>Title</p>
+    <p>Composer</p>
+    <p>Arranger</p>
+    <p>Publisher</p>
+    <p>Grade</p>
+    <p>Spec</p>
+    <label class="container">Add to Recomendations
+      <input type="checkbox" checked="checked">
+      <span class="checkmark"></span>
+    </label>
+    </div>
+   </div>
+  -->
+
+   <h3 class = "pageHeadings">Sorting Menus</h3>
+   <div class="menuContainer">
+    
+    <!-- Filter and Sort Form -->
+    <form id="filterForm">
+        <div class="form-group">
+            <label for="eventName">Group Performing:</label>
+            <input type="text" id="eventName" name="eventName" placeholder="Band">
+        </div>
+        <div class="form-group">
+            <label for="title">Title:</label>
+            <input type="text" id="title" name="title" placeholder="Enter title">
+        </div>
+        <div class="form-group">
+            <label for="composer">Composer:</label>
+            <input type="text" id="composer" name="composer" placeholder="Enter composer name">
+        </div>
+        <div class="form-group">
+            <label for="arranger">Arranger:</label>
+            <input type="text" id="arranger" name="arranger" placeholder="Enter arranger name">
+        </div>
+        <div class="form-group">
+            <label for="grade">Grade:</label>
+            <input type="number" id="grade" name="grade" placeholder="1" min="1" max="5">
+        </div>
+        <div class="form-group">
+            <button type="button" onclick="filterData()">Filter</button>
+            <button type="button" onclick="resetForm()">Reset</button>
+        </div>
+    </form>
+    
+    <!-- Table to display filtered results -->
+    <table id="resultsTable">
+        <thead>
+            <tr>
+                <th>Select</th>
+                <th>Code</th>
+                <th>Event Name</th>
+                <th>Title</th>
+                <th>Composer</th>
+                <th>Arranger</th>
+                <th>Publisher</th>
+                <th>Grade</th>
+                <th>Specification</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Rows will be populated here by JavaScript -->
+        </tbody>
+    </table>
+
+    <!-- Table to display related pieces -->
+    <h3 class = "pageHeadings">Recomendations Based On Selections</h3>
+    <table id="relatedTable">
+        <thead>
+            <tr>
+                <th>Code</th>
+                <th>Event Name</th>
+                <th>Title</th>
+                <th>Composer</th>
+                <th>Arranger</th>
+                <th>Publisher</th>
+                <th>Grade</th>
+                <th>Specification</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Related pieces will be populated here by JavaScript -->
+        </tbody>
+    </table>
+</div>
+
 
 
 </body>
