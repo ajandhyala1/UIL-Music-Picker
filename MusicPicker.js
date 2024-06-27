@@ -29,7 +29,7 @@ function test(){
 
 // script.js
 
-// Sample data (this will be replaced with the actual data fetched from the CSV or API)
+
 
 const data = [
     { Code: "100-1-15193", EventName: "Band", Title: "Bartok Suite", Composer: "Bartok", Arranger: "Clark", Publisher: "Belwin, Inc", Grade: 1, Specification: "" },
@@ -40,7 +40,6 @@ const data = [
     { Code: "100-1-15203", EventName: "Orchestra", Title: "Symphony No. 5", Composer: "Shostakovich", Arranger: "Smith", Publisher: "EMI", Grade: 5, Specification: "Full Score" },
     { Code: "100-1-15204", EventName: "Band", Title: "Canon in D", Composer: "Pachelbel", Arranger: "Clark", Publisher: "Belwin, Inc", Grade: 2, Specification: "" },
     { Code: "100-1-15205", EventName: "Choir", Title: "Ave Maria", Composer: "Schubert", Arranger: "Jones", Publisher: "Oxford", Grade: 4, Specification: "" },
-    // Add more sample data here for testing...
 ];
 
 
@@ -92,7 +91,7 @@ function showRelatedPieces(checkbox) {
     const selectedArranger = checkbox.getAttribute('data-arranger').toLowerCase();
 
     const relatedData = data.filter(item => {
-        return (item.Grade === selectedGrade - 1 || item.Grade === selectedGrade + 1) &&
+        return (item.Grade === selectedGrade - 1 || item.Grade === selectedGrade + 1 || item.Grade === selectedGrade) &&
                item.Arranger.toLowerCase() === selectedArranger &&
                item.Code !== selectedCode;
     });

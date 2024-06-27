@@ -52,9 +52,10 @@ html{
 
 
 /*about the creator*/
+/* Three columns side by side */
 .column {
   float: left;
-  width: 33.3%;
+  width: 30%;
   margin-bottom: 16px;
   padding: 0 8px;
 }
